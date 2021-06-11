@@ -1,4 +1,6 @@
-﻿
+﻿using System.Collections;
+
+
 namespace DexSets
 {
     public class Purchases
@@ -6,7 +8,7 @@ namespace DexSets
         public string PurchasesName { get; set; }
 
         public Purchases(string purchasesName)
-        {
+            {
             PurchasesName = purchasesName;
         }
     }
