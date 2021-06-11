@@ -6,41 +6,35 @@ namespace DexSets
 {
     public class PurchasesEnum : IEnumerator
     {
-        public Purchases[] Purchases { get; set; }
+        readonly private Purchases[] _purchases;
 
         int _position = -1;
 
         public PurchasesEnum(Purchases[] list)
         {
-            Purchases = list;
+            _purchases = list;
         }
 
         public bool MoveNext()
         {
             _position++;
-            return (_position < Purchases.Length);
+            return (_position < _purchases.Length);
         }
 
         public void Reset()
         {
             _position = -1;
         }
-
-        object IEnumerator.Current
-        {
-            get
-            {
-                return Current;
-            }
-        }
-
+        
+        object IEnumerator.Current { get; }
+        
         public Purchases Current
         {
             get
             {
                 try
                 {
-                    return Purchases[_position];
+                    return _purchases[_position];
                 }
                 catch (IndexOutOfRangeException)
                 {
