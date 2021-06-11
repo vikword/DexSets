@@ -12,7 +12,7 @@ namespace DexSets
         }
 
         IEnumerator IEnumerable.GetEnumerator()
-    {
+        {
             return GetEnumerator();
         }
 
